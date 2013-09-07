@@ -18,7 +18,7 @@ CHIP Mux {
 	Not(in=sel, out=invertsel);
     And(a=sel, b=b, out=out1);
     And(a=invertsel, b=a, out=out2);
-    Or(a=out, b=out2, out=out);
+    Or(a=out1, b=out2, out=out);
 	
 	
 }
