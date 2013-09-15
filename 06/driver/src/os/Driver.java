@@ -25,31 +25,32 @@ public class Driver {
 
             String sCurrentLine;
 
-            br = new BufferedReader(new FileReader("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\add\\Add.asm"));
-            File file = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\add\\Add.hack");
-            if (!file.exists()) {
+            br = new BufferedReader(new FileReader("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\add\\Add.asm")); // BufferReader to read file
+   
+            File file = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\add\\Add.hack"); // file to write
+            if (!file.exists()) { //if file doesnt exist then it will create a new file
                 file.createNewFile();
             }
-            FileWriter fw = new FileWriter(file.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter(fw);
+            FileWriter fw = new FileWriter(file.getAbsoluteFile()); // Filewriter object to write file 
+            BufferedWriter bw = new BufferedWriter(fw); // created object for bufferwriter to write
             //        br = new BufferedReader(new FileReader("F:\\qqq.asm"));
 
             //C:\Users\miten\Documents\GitHub\src\06\add
 
-            while ((sCurrentLine = br.readLine()) != null) {
+            while ((sCurrentLine = br.readLine()) != null) { // this whille loop will fetch or read line by line
                 System.out.println(sCurrentLine);
-                bw.write(sCurrentLine);
-                bw.write("\n");
+                bw.write(sCurrentLine); // writing to destination file
+                bw.write("\n"); // new line
 
             }
-            bw.close();
+            bw.close(); // closing file after writing
 
-        } catch (IOException e) {
+        } catch (IOException e) { // handles exception
             e.printStackTrace();
-        } finally {
+        } finally { // final block
             try {
                 if (br != null) {
-                    br.close();
+                    br.close(); // read buffer closing
                 }
             } catch (IOException ex) {
                 ex.printStackTrace();
