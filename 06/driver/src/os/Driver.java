@@ -40,12 +40,67 @@ public class Driver {
 
 
         // temp database started
-        // _ = -
-        // $ = +
+        // _ = -.......minus .. m
+        // $ = +..plus.. p
+        // !... exclamentory ... e
+        // |... or....or
+        // & and and
+        String c0 = "101010";
+        String c1 = "111111";
+        String cm1 = "111010";
+        String cD = "001100";
+        String cA = "110000";
+        String ceD = "001101";
+        String ceA = "110001";
+        String cmD = "001111";
+        String cmA = "110011";
+        String cDp1 = "011111";
+        String cAp1 = "110111";
+        String cDm1 = "001110";
+        String cAm1 = "110010";
+        String cDpA = "000010";
+        String cDmA = "010011";
+        String cAmD = "000111";
+        String cDandA = "000000";
+        String cDorA = "010101";
 
 
-
-
+        String cM = "110000";
+        String ceM = "110001";
+        String cmM = "110011";
+        String cMp1 = "110111";
+        String cMm1 = "110010";
+        String cDpM = "000010";
+        String cDmM = "010011";
+        String cMmD = "000111";
+        String cDandM = "000000";
+        String cDorM = "010101";
+        
+        
+        
+        // dest database
+        
+        String destnull="000";
+        String destM="001";
+        String destD="010";
+        String destMD="011";
+        String destA="100";
+        String destAM="101";
+        String destAD="110";
+        String destAMD="111";
+        
+        // jump
+        
+        String jump="000";
+        String jumpJGT="001";
+        String jumpJEQ="010";
+        String jumpJGE="011";
+        String jumpJLT="100";
+        String jumpJNE="101";
+        String jumpJLE="110";
+        String jumpJMP="111";
+        
+        
 
 
 
