@@ -6,7 +6,13 @@ Source code is in ::: /master/06/drivers/src/os/Driver.java
 
 To run program :::: follow the instructions
 
-::::> javac Driver.java
+Start CMD.. go to C:\Users\miten\Documents\GitHub\src\06
 
-::::> java Driver add//add.asm
+javac Driver.java
+
+java Driver add//add.asm
+
+java Driver max//max.asm
+
+
 

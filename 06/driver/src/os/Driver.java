@@ -24,9 +24,9 @@ public class Driver {
 
         if (args[0].endsWith(".asm")) {
 
-            File file1 = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\"+ args[0]); // file to write
+            File file1 = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\" + args[0]); // file to write
             if (!file1.exists()) { //if file doesnt exist then it will show error..
-                System.out.println("\n Not a valid .asm file\n");
+                System.out.println("\n File does not exist\n");
                 System.exit(0);
             }
         } else {
@@ -34,10 +34,23 @@ public class Driver {
             System.exit(0);
         }
 
-       // System.out.println(Integer.toBinaryString(12));
-        String newfilename=args[0].replaceAll(".asm", ".hack");
+        // System.out.println(Integer.toBinaryString(12));
+        String newfilename = args[0].replaceAll(".asm", ".hack");
 
 
+
+        // temp database started
+        // _ = -
+        // $ = +
+
+
+
+
+
+
+
+
+        // temp database ended
 
         BufferedReader br = null;
 
@@ -48,7 +61,7 @@ public class Driver {
 //            br = new BufferedReader(new FileReader("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\add\\Add.asm")); // BufferReader to read file
 
             br = new BufferedReader(new FileReader("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\" + args[0])); // BufferReader to read file
-            File file = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\"+newfilename); // file to write
+            File file = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\" + newfilename); // file to write
             if (!file.exists()) { //if file doesnt exist then it will create a new file
                 file.createNewFile();
             }
@@ -64,21 +77,37 @@ public class Driver {
 
                 if (cl.equals("")) {
                     System.out.println("null");
+
                 } else {
 
                     if (cl.startsWith("@")) {
                         System.out.println("This is A instruction");
+
+                        String k = Integer.toBinaryString(Integer.parseInt(cl.replaceAll("@", "")));
+                        int temp = 16 - k.length();
+                        System.out.println("Length: " + temp);
+                        for (int i = 0; i < temp; i++) {
+                            k = "0" + k;
+                        }
+                        System.out.println(k);
+                        cl = k;
+
+
+                        bw.write(cl); // writing to destination file
+                        bw.write("\n"); // new line
                     } else {
                         if (cl.startsWith("//")) {
                             System.out.println("This is commented line.. ");
+                            cl = "";
                         } else {
                             System.out.println("This is C instruction");
+                            bw.write(cl); // writing to destination file
+                            bw.write("\n"); // new line
                         }
                     }
                 }
 
-                bw.write(cl); // writing to destination file
-                bw.write("\n"); // new line
+
 
             }
             bw.close(); // closing file after writing
