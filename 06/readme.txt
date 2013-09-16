@@ -4,3 +4,9 @@ Initial set up is completed.
 
 Source code is in ::: /master/06/drivers/src/os/Driver.java
 
+To run program :::: follow the instructions
+
+::::> javac Driver.java
+
+::::> java Driver add//add.asm
+

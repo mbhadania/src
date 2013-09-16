@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package os;
+//package os;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,8 +20,22 @@ public class Driver {
     public static void main(String[] args) {
 
 
+//        System.out.println(args[0]);
 
+        if (args[0].endsWith(".asm")) {
 
+            File file1 = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\"+ args[0]); // file to write
+            if (!file1.exists()) { //if file doesnt exist then it will create a new file
+                System.out.println("\n Not a valid .asm file\n");
+                System.exit(0);
+            }
+        } else {
+            System.out.println("\n Not a valid .asm file \n");
+            System.exit(0);
+        }
+
+       // System.out.println(Integer.toBinaryString(12));
+        String newfilename=args[0].replaceAll(".asm", ".hack");
 
 
 
@@ -31,9 +45,10 @@ public class Driver {
 
             String cl; // current line... cl is easy to write so...
 
-            br = new BufferedReader(new FileReader("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\add\\Add.asm")); // BufferReader to read file
+//            br = new BufferedReader(new FileReader("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\add\\Add.asm")); // BufferReader to read file
 
-            File file = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\add\\Add.hack"); // file to write
+            br = new BufferedReader(new FileReader("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\" + args[0])); // BufferReader to read file
+            File file = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\"+newfilename); // file to write
             if (!file.exists()) { //if file doesnt exist then it will create a new file
                 file.createNewFile();
             }
