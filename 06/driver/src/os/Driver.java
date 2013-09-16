@@ -25,7 +25,7 @@ public class Driver {
         if (args[0].endsWith(".asm")) {
 
             File file1 = new File("C:\\Users\\miten\\Documents\\GitHub\\src\\06\\"+ args[0]); // file to write
-            if (!file1.exists()) { //if file doesnt exist then it will create a new file
+            if (!file1.exists()) { //if file doesnt exist then it will show error..
                 System.out.println("\n Not a valid .asm file\n");
                 System.exit(0);
             }
